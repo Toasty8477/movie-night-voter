@@ -1,11 +1,11 @@
 {
-  "name": "",
+  "name": "movie-night-voter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
-  "license": "AGPL-version-3.0",
-  "private": false,
+  "license": "MPL-2.0",
+  "private": true,
   "engines": {
     "node": ">= 14.0.0",
     "npm": ">= 6.0.0"
@@ -18,9 +18,9 @@
   "bugs": "",
   "keywords": [],
   "author": {
-    "name": "",
+    "name": "Alex Horton",
     "email": "",
-    "url": ""
+    "url": "toasty8477.github.io"
   },
   "contributors": [],
   "scripts": {
