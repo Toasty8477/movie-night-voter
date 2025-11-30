@@ -1,11 +1,17 @@
 import mongoose from "mongoose";
 import express from "express"
+import log from "loglevel"
 
 // Set log level
 const levels = ["debug", "info", "warn", "error"]
 const logLevel = process.env.LOG_LEVEL
 
-const serverHost = process.env.HOST
+if (levels.find(logLevel)) {
+    log.setDefaultLevel(logLevel)
+} else {
+    log.setDefaultLevel("info")
+}
+
 const serverPort = process.env.PORT
 
 const dbHost = process.env.DB_HOST
@@ -17,7 +23,7 @@ try {
     await mongoose.connect(`mongodb://${dbHost}:${dbPort}/movies`)
 } catch (error) {
     if (logLevel === "error") {
-        console.error(`Unable to connect to MongoDB Container: ${error}`)
+        log.error(`Unable to connect to MongoDB Container: ${error}`)
     }
     process.exit(1)
 }
@@ -29,4 +35,6 @@ app.use(express.static("public", { index: "index.html" }))
 
 
 // Start Express server
-app.listen()
+app.listen(serverPort, () => {
+    log.info(`Listening on port ${serverPort}`)
+})
