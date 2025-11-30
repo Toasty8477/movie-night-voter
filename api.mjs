@@ -26,6 +26,11 @@ try {
     process.exit(1)
 }
 
+// Set up movie schema
+const movieSchema = new mongoose.Schema({
+    
+})
+
 // Initialize express server
 const app = new express()
 app.use(express.json())
