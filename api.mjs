@@ -4,18 +4,18 @@ import log from "loglevel"
 
 // Set log level
 const levels = ["debug", "info", "warn", "error"]
-const logLevel = process.env.LOG_LEVEL
+const logLevel = process.env.LOG_LEVEL ? process.env.LOG_LEVEL : "info"
 
-if (levels.find(logLevel)) {
+if (levels.includes(logLevel)) {
     log.setDefaultLevel(logLevel)
 } else {
     log.setDefaultLevel("info")
 }
 
-const serverPort = process.env.PORT
+const serverPort = process.env.PORT ? process.env.PORT : 3000
 
-const dbHost = process.env.DB_HOST
-const dbPort = process.env.DB_PORT
+const dbHost = process.env.DB_HOST ? process.env.DB_HOST : "127.0.0.1"
+const dbPort = process.env.DB_PORT ? process.env.DB_PORT : 27017
 
 
 // Connect to mongodb container running on the same network
