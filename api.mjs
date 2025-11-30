@@ -22,9 +22,7 @@ const dbPort = process.env.DB_PORT
 try {
     await mongoose.connect(`mongodb://${dbHost}:${dbPort}/movies`)
 } catch (error) {
-    if (logLevel === "error") {
-        log.error(`Unable to connect to MongoDB Container: ${error}`)
-    }
+    log.error(`Unable to connect to MongoDB Container: ${error}`)
     process.exit(1)
 }
 
