@@ -1,6 +1,11 @@
-Schema:
+Movie Schema:
 title : String
-likes : Number
-dislikes : Number
+year : Number
+description : String
+likes : Array
+dislikes : Array
 artLocation : String
-descriptionLocation : String
+
+User Schema:
+name : String
+uid : String

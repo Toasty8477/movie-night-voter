@@ -28,7 +28,17 @@ try {
 
 // Set up movie schema
 const movieSchema = new mongoose.Schema({
-    
+    title: String,
+    description: String,
+    year: Double,
+    likes: Array,
+    dislikes: Array,
+    artLocation: String
+})
+
+const userSchema = new mongoose.Schema({
+    name: Scheme,
+    uid: String
 })
 
 // Initialize express server
