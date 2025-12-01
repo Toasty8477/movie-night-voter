@@ -38,7 +38,8 @@ const movieSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
     name: Scheme,
-    uid: String
+    uid: String,
+    password: String
 })
 
 // Initialize express server
