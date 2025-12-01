@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import express from "express"
 import log from "loglevel"
+import * as bcrypt from "bcrypt"
 
 // Set log level
 const levels = ["debug", "info", "warn", "error"]
