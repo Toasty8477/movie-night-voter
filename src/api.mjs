@@ -31,14 +31,14 @@ try {
 const movieSchema = new mongoose.Schema({
     title: String,
     description: String,
-    year: Double,
+    year: Number,
     likes: Array,
     dislikes: Array,
     artLocation: String
 })
 
 const userSchema = new mongoose.Schema({
-    name: Scheme,
+    name: String,
     uid: String,
     password: String
 })
