@@ -62,6 +62,23 @@ app.get("/movies", async (req, res) => {
     })
 })
 
+app.post("/movie", async (req, res) => {
+    let reqTitle = req.body.title
+    reqTitle = reqTitle.replace(" ", "%20")
+    const reqYear = req.body.year
+    
+    const url = `https://api.themoviedb.org/3/search/movie?query=${reqTitle}include_adult=false&language=en-US&page=1`
+    const options = {method: "GET", headers: {accept: "application/json"}}
+
+    fetch(url, options)
+    .then(res => res.json())
+    .then(json => {
+        log.debug(json)
+    })
+    .catch(err => log.error(err))
+
+})
+
 // Start Express server
 app.listen(serverPort, () => {
     log.info(`Listening on port ${serverPort}`)
