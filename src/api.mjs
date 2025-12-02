@@ -7,6 +7,8 @@ import * as bcrypt from "bcrypt"
 const levels = ["debug", "info", "warn", "error"]
 const logLevel = process.env.LOG_LEVEL ? process.env.LOG_LEVEL : "info"
 
+log.info("Starting Container")
+
 if (levels.includes(logLevel)) {
     log.setDefaultLevel(logLevel)
 } else {
@@ -20,6 +22,7 @@ const dbPort = process.env.DB_PORT ? process.env.DB_PORT : 27017
 
 
 // Connect to mongodb container running on the same network
+log.debug("Attempting to connect to MongoDB Server")
 try {
     await mongoose.connect(`mongodb://${dbHost}:${dbPort}/movies`)
 } catch (error) {
