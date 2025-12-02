@@ -40,17 +40,27 @@ const movieSchema = new mongoose.Schema({
     artLocation: String
 })
 
+const Movie = mongoose.model("Movie", movieSchema)
+
 const userSchema = new mongoose.Schema({
     name: String,
     uid: String,
     password: String
 })
 
+const User = mongoose.model("User", userSchema)
+
 // Initialize express server
 const app = new express()
 app.use(express.json())
 app.use(express.static("public", { index: "index.html" }))
 
+app.get("/movies", async (req, res) => {
+    const movies = await Movie.find()
+    res.json({
+        "movies": movies
+    })
+})
 
 // Start Express server
 app.listen(serverPort, () => {
