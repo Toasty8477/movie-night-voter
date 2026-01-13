@@ -12,6 +12,8 @@ RUN npm install
 
 COPY ./src .
 
+RUN npm run build
+
 EXPOSE 3000
 
 ENTRYPOINT [ "node", "api.mjs" ]
