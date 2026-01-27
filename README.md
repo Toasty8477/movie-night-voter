@@ -7,4 +7,4 @@
 Tracking movie votes using discord reactions is complicated so I decided to make it more complicated by writing a whole website.
 
 ## How?
-By just running the docker container anyone on your network can make an account and use all the features. Acces outside of your network requires more work. I **DO NOT** recommend forwarding ports on your router. Not only is this usualy not secure, I am also not a security expert by any means and this project is surely riddled with security holes.
+By just running the docker container anyone on your network can make an account and use all the features. Acces outside of your network requires more work. I **DO NOT** recommend forwarding ports on your router. I am not a security expert by any means and this project likely has at least one security flaw
