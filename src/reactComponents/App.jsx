@@ -1,14 +1,14 @@
 import Header from "./Header"
 import MovieGrid from "./MovieGrid"
 
-const App = (props) => {
+const App = () => {
     return(
         <div className="container">
             <div>
                 <Header />
             </div>
             <div>
-                <MovieGrid />
+                <MovieGrid moviesUrl = "http://localhost:3000" />
             </div>
         </div>
     )
